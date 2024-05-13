@@ -31,7 +31,7 @@ exports.buscarProductoPorId = async(req, res)=>{
         if(!productos){
             res.status(404).json({msg:"No se encontro el producto para este id"})
         }else{
-            res.json(productos);
+            res.json({productos});
         }
     } catch (error) {
         console.log(error.message);
@@ -50,19 +50,19 @@ exports.actualizarProducto = async(req, res)=>{
             cantidad,
             precio
         }  = req.body;  
-        let productos = await Producto.findById(req.params.id);
-        if(!productos){
+        let producto = await Producto.findById(req.params.id);
+        if(!producto){
             res.status(500).json({msg:"no se encontro el producto por id"})
         }else{
-            productos.nombre = nombre;
-            productos.presentacion = presentacion;
-            productos.marca = marca;
-            productos.fechaVence = fechaVence;
-            productos.cantidad = cantidad;
-            productos.precio = precio;
+            producto.nombre = nombre;
+            producto.presentacion = presentacion;
+            producto.marca = marca;
+            producto.fechaVence = fechaVence;
+            producto.cantidad = cantidad;
+            producto.precio = precio;
 
-            productos = await Producto.findOneAndUpdate({ _id: req.params.id }, productos, {new:true});
-            res.json(productos);
+            producto = await Producto.findOneAndUpdate({ _id: req.params.id }, producto, {new:true});
+            res.json({message:"producto actualizado"});
         }  
     } catch (error) {
         console.log(error);

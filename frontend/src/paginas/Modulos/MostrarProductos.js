@@ -134,7 +134,7 @@ const MostrarProductos = () => {
                       <td className="text-center align-middle"> {producto.precio} </td>
                       <td>
                         <Link
-                          to={`/producto/editar/${producto._id}`}
+                          to={`/productos/editar/${producto._id}`}
                           className="btn btn-outline-success m-1 fa-lg rounded-circle"
                           title='Editar Producto'
                         >

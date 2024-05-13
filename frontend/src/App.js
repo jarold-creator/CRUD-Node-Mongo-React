@@ -10,6 +10,7 @@ import AgregarCliente from './paginas/Modulos/AgregarClientes';
 import EditarCliente from './paginas/Modulos/EditarCliente';
 import MostrarProductos from './paginas/Modulos/MostrarProductos';
 import AgregarProducto from './paginas/Modulos/AgregarProductos';
+import EditarProducto from './paginas/Modulos/EditarProductos';
 
 
 function App() {
@@ -20,12 +21,13 @@ function App() {
           <Routes>
             <Route path='/' exact element = { <Login /> }/>
             <Route path='/registro' exact element = { <Registro /> }/>
-            <Route path='/home' exact element ={ <Home /> }/> 
-            <Route path='/clientes' exact element ={ <MostrarClientes /> } />      
-            <Route path='/clientes/agregar/' exact element ={ <AgregarCliente /> } />    
+            <Route path='/home' exact element = { <Home /> }/> 
+            <Route path='/clientes' exact element = { <MostrarClientes /> } />      
+            <Route path='/clientes/agregar/' exact element = { <AgregarCliente /> } />    
             <Route path='/clientes/editar/:id' exact element = { <EditarCliente /> } />
             <Route path='/productos' exact element = { <MostrarProductos /> } /> 
-            <Route path='/productos/agregar' exact element = { <AgregarProducto /> } />         
+            <Route path='/productos/agregar/' exact element = { <AgregarProducto /> } />  
+            <Route path='/productos/editar/:id' exact element = { <EditarProducto /> } />       
           </Routes>
         </Router>
       </Fragment>
